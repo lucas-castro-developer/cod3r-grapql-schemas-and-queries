@@ -1,10 +1,12 @@
 const { AppoloServer, gql, ApolloServer } = require("apollo-server");
 
 const typeDefs = gql`
+  scalar Date
+
   # Pontos de entrada da sua API
   type Query {
     ola: String
-    horaAtual: String
+    horaAtual: Date
   }
 `;
 
@@ -14,12 +16,7 @@ const resolvers = {
       return "Olá GraphQL!";
     },
     horaAtual() {
-      const dataHora = new Date();
-      const horaAtual = dataHora.getHours();
-      const minutoAtual = dataHora.getMinutes();
-      const segundoAtual = dataHora.getSeconds();
-      const horaCerta = `${horaAtual}h:${minutoAtual}min:${segundoAtual}s`;
-      return horaCerta;
+      return new Date;
     },
   },
 };
