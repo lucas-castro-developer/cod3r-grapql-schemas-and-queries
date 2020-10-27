@@ -21,23 +21,28 @@ const typeDefs = gql`
 `;
 
 const resolvers = {
+  Usuario: {
+    salario(usuario) {
+      return usuario.salario_real
+    },
+  },
   Query: {
     ola() {
       return "Olá GraphQL!";
     },
     horaAtual() {
-      return new Date;
+      return new Date();
     },
     usuarioLogado() {
       return {
         id: 1,
-        nome: 'Lucas Castro',
-        email: 'lucascastroteste@gmail.com',
+        nome: "Lucas Castro",
+        email: "lucascastroteste@gmail.com",
         idade: 23,
         salario_real: 1234.56,
-        vip: true
-      }
-    }
+        vip: true,
+      };
+    },
   },
 };
 
