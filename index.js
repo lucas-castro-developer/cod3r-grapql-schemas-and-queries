@@ -25,6 +25,7 @@ const typeDefs = gql`
     horaAtual: Date!
     usuarioLogado: Usuario
     produtoEmDestaque: Produto
+    numerosMegaSena: [Int!]!
   }
 `;
 
@@ -64,8 +65,15 @@ const resolvers = {
       return {
         nome: "Omo - Sabão em pó",
         preco: 57.6,
-        desconto: 0.5
+        desconto: 0.5,
       };
+    },
+    numerosMegaSena() {
+      const crescente = (a, b) => a - b;
+      return Array(6)
+        .fill(0)
+        .map((n) => parseInt(Math.random() * 60 + 1))
+        .sort(crescente);
     },
   },
 };
