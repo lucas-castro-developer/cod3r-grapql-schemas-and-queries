@@ -21,6 +21,17 @@ const usuarios = [
   },
 ];
 
+const perfis = [
+  {
+    id: 1,
+    nome: "Comum",
+  },
+  {
+    id: 2,
+    nome: "Administrador",
+  },
+];
+
 const typeDefs = gql`
   scalar Date
 
@@ -31,6 +42,11 @@ const typeDefs = gql`
     idade: Int
     salario: Float
     vip: Boolean
+  }
+
+  type Perfil {
+    id: Int
+    nome: String!
   }
 
   type Produto {
@@ -49,6 +65,8 @@ const typeDefs = gql`
     numerosMegaSena: [Int!]!
     usuarios: [Usuario]
     usuario(id: Int): Usuario
+    perfis: [Perfil]
+    perfil(id: Int): Perfil
   }
 `;
 
@@ -103,7 +121,14 @@ const resolvers = {
     },
     usuario(_, { id }) {
       const sels = usuarios.filter((u) => u.id === id);
-      return sels ? sels[0] : null
+      return sels ? sels[0] : null;
+    },
+    perfis() {
+      return perfis;
+    },
+    perfil(_, { id }) {
+      const retPerfil = perfis.filter((p) => p.id === id);
+      return retPerfil ? retPerfil[0] : null
     },
   },
 };
