@@ -1,5 +1,5 @@
-#import Query from 'query.gql'
-#import Produto from 'produto.gql'
-#import Usuario, Perfil from 'usuario.gql'
+#import Query from 'Query.gql'
+#import Produto from 'Produto.gql'
+#import Usuario, Perfil from 'Usuario.gql'
 
 scalar Date
