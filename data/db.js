@@ -5,6 +5,7 @@ const usuarios = [
     email: "jsilva@zmail.com",
     idade: 29,
     perfil_id: 1,
+    status: 'ATIVO'
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ const usuarios = [
     email: "rafajun@wemail.com",
     idade: 31,
     perfil_id: 2,
+    status: 'INATIVO'
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ const usuarios = [
     email: "danismi@umail.com",
     idade: 24,
     perfil_id: 1,
+    status: 'BLOQUEADO'
   },
 ];
 
