@@ -1,0 +1,5 @@
+#import Query from 'query.gql'
+#import Produto from 'produto.gql'
+#import Usuario, Perfil from 'usuario.gql'
+
+scalar Date
